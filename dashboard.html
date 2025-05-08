@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - نادي هيرو الرياضي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>نادي هيرو الرياضي</h1>
+        <nav>
+            <a href="dashboard.html" class="active">لوحة التحكم</a>
+            <a href="members.html">إدارة الأعضاء</a>
+            <a href="reports.html">التقارير</a>
+            <a href="index.html" onclick="logout()">تسجيل الخروج</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="attendance-section">
+            <h2>تسجيل حضور العضو</h2>
+            <form id="attendanceForm">
+                <div class="form-group">
+                    <label for="memberCode">أدخل كود العضو أو مسح الباركود:</label>
+                    <input type="text" id="memberCode" placeholder="كود العضو" required>
+                </div>
+                <button type="submit" class="btn">تسجيل الحضور</button>
+            </form>
+            <div id="attendanceResult"></div>
+        </div>
+
+        <div class="recent-attendance">
+            <h3>آخر عمليات الحضور</h3>
+            <table id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>اسم العضو</th>
+                        <th>كود العضو</th>
+                        <th>وقت الحضور</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم ملؤها بالبيانات من JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/attendance.js"></script>
+</body>
+</html>

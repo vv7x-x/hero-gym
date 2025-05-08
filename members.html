@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الأعضاء - نادي هيرو الرياضي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>نادي هيرو الرياضي</h1>
+        <nav>
+            <a href="dashboard.html">اللوحة الرئيسية</a>
+            <a href="members.html" class="active">إدارة الأعضاء</a>
+            <a href="reports.html">التقارير</a>
+            <a href="index.html">تسجيل الخروج</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="members-actions">
+            <button id="addMemberBtn">إضافة عضو جديد</button>
+            <input type="text" id="searchMember" placeholder="ابحث عن عضو...">
+        </div>
+        
+        <div class="members-list">
+            <table id="membersTable">
+                <thead>
+                    <tr>
+                        <th>الكود</th>
+                        <th>الاسم</th>
+                        <th>نوع العضوية</th>
+                        <th>تاريخ التسجيل</th>
+                        <th>الحالة</th>
+                        <th>إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم ملؤها بالبيانات من JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- نموذج إضافة عضو -->
+        <div id="addMemberModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>إضافة عضو جديد</h2>
+                <form id="addMemberForm">
+                    <input type="text" id="memberName" placeholder="الاسم الكامل" required>
+                    <input type="tel" id="memberPhone" placeholder="رقم الهاتف">
+                    <select id="membershipType" required>
+                        <option value="">اختر نوع العضوية</option>
+                        <option value="monthly">شهري</option>
+                        <option value="quarterly">ربع سنوي</option>
+                        <option value="yearly">سنوي</option>
+                    </select>
+                    <button type="submit">حفظ</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/members.js"></script>
+</body>
+</html>
