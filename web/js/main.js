@@ -15,38 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.sidebar').classList.toggle('active');
         });
     }
-
-    // معالجة تسجيل الدخول
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            if (!username || !password) {
-                showAlert('يرجى إدخال اسم المستخدم وكلمة المرور', 'danger');
-                return;
-            }
-            try {
-                // إرسال البيانات إلى API (هنا نفترض أن اسم المستخدم هو رقم الهاتف)
-                const response = await fetch('api/auth.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ phone: username, password })
-                });
-                const data = await response.json();
-                if (data.success) {
-                    localStorage.setItem('authToken', 'dummy-token'); // يمكنك استبدالها بتوكن حقيقي إذا أضفته في الـ API
-                    localStorage.setItem('userData', JSON.stringify(data.member));
-                    window.location.href = 'dashboard.html';
-                } else {
-                    showAlert(data.message || 'بيانات الدخول غير صحيحة', 'danger');
-                }
-            } catch (err) {
-                showAlert('حدث خطأ في الاتصال بالسيرفر', 'danger');
-            }
-        });
-    }
 });
 
 function logout() {

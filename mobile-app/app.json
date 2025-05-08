@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "android": {
+      "package": "com.herogym.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "54a3f2b7-9a4c-4008-a9fb-a2a7b9a6a028"
+      }
+    }
+  }
+}
